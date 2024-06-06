@@ -1,0 +1,40 @@
+Scenario
+---------------
+We have two databases, the Organisation db which contains 10 years worth of data and the finance db which contains 10 years worth of data. The tables in these databases are described as follows: 
+1. Organisation db
+	1. customers table
+		1. customer name (varchar)
+		2. phone (varchar)
+		3. email (varchar)
+		4. id (varchar)
+		5. created_at (datetime)
+		6. updated_at (datetime)
+	2. inventory table
+		1. id (varchar)
+		2. name (varchar)
+		3. description (varchar)
+		4. type (varchar)
+		5. serial number (varchar)
+		6. location (varchar)
+		7. created_at (date time)
+		8. status (varchar)
+2. Finance db
+	1. Payments table
+		1. id (varchar)
+		2. customer_id (varchar)
+		3. currency (varchar)
+		4. amount (float)
+		5. sale_id (varchar)
+		6. created_at (datetime)
+	2. Sales table
+		1. id (varchar)
+		2. inventory_id (varchar)
+		3. created_at (datetime)
+
+Our analysts want to make reports on 
+1. sales which they visit every hour to inform them on sales operations
+2. revenue which they visit every morning to inform then on financial performance the previous day
+3. Inventory report which they visit every four hours to inform them on current status on availability of inventory per location
+4. Monthly trends on sales and revenue
+
+Create an etl using python that will pick data from source databases and load data to an analytics database. Talk through your strategy and code. Credentials for source databases and destination databases have been created. Make the etl run periodically depending on the requirements of the analysts. Your data integrity
